@@ -1,37 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 10:42:02 by sopereir          #+#    #+#             */
-/*   Updated: 2023/04/17 13:54:57 by sofs             ###   ########.fr       */
+/*   Created: 2023/04/17 15:24:30 by sofs              #+#    #+#             */
+/*   Updated: 2023/04/17 15:50:47 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+static int	isSpace(char c)
 {
-	size_t	i;
-	char		str[100];
-	const char	*s;
-	char		*d;
+	if (c == ' ' || c == '\t' 
+		|| c == '\v' || c == '\n')
+		return (1);
+	return (0);
+}
 
-	d = dest;
-	s = src;
+int ft_atoi(const char *nptr)
+{
+	int	i;
+	int isNeg;
+	int	total;
+
+	total = 0;
+	isNeg = 1;
 	i = 0;
-	while (i < n)
+	while (isSpace(nptr[i]))
+		i++;
+	if (nptr[i] == '-')
 	{
-		str[i] = s[i];
+		isNeg = -1;
 		i++;
 	}
-	i = 0;
-	while (i < n)
+	else if (nptr[i] == '+')
+		i++;
+	while (ft_isdigit(nptr[i]) && nptr[i] != '\0')
 	{
-		d[i] = str[i];
+		total = total * 10 + nptr[i] - '0';
 		i++;
 	}
-	return (dest);
+	return (total * isNeg);
 }

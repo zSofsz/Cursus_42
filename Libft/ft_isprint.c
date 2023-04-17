@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sopereir <sopereir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:34:24 by sopereir          #+#    #+#             */
-/*   Updated: 2023/04/14 09:34:58 by sopereir         ###   ########.fr       */
+/*   Updated: 2023/04/17 15:38:47 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if ((unsigned)c <= 127 && (unsigned)c >= 32)
+	if ((unsigned char)c <= 127 && (unsigned char)c >= 32)
 		return (1);
 	return (0);
 }

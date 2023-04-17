@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sopereir <sopereir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:45:45 by sopereir          #+#    #+#             */
-/*   Updated: 2023/04/14 16:47:11 by sopereir         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:42:03 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	*ft_memset(void *s, int c, size_t n)
 		str[i] = c;
 		i++;
 	}
-	return (str);
+	return (s);
 }

@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 10:42:02 by sopereir          #+#    #+#             */
-/*   Updated: 2023/04/17 13:54:57 by sofs             ###   ########.fr       */
+/*   Created: 2023/04/17 14:28:30 by sofs              #+#    #+#             */
+/*   Updated: 2023/04/17 15:16:25 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char *ft_strnstr(const char	*big, const char *little, size_t len)
 {
 	size_t	i;
-	char		str[100];
-	const char	*s;
-	char		*d;
+	size_t	j;
+	size_t	len_little;
 
-	d = dest;
-	s = src;
+	len_little = ft_strlen(little);
 	i = 0;
-	while (i < n)
+	while (big[i] != '\0' && i < len)
 	{
-		str[i] = s[i];
+		j = 0;
+		while (big[i + j] == little[j]
+			&& big[i + j] != '\0')
+		{
+			if (i + j < len)
+				return NULL ;
+			if (j == len_little - 1)
+				return ((char *)big + i);
+			j++;
+		}
 		i++;
 	}
-	i = 0;
-	while (i < n)
-	{
-		d[i] = str[i];
-		i++;
-	}
-	return (dest);
+	return NULL ;
 }

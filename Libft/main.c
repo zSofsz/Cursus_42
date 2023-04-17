@@ -3,7 +3,7 @@
 
 int main()
 {
-	char str[50]="mek\0ie";
-	printf("%s\n%s\n",strchr(str,'\0'),ft_strchr(str,'\0'));
+	//char str[50]="mek\0ie";
+	printf("%d\n%d\n",ft_atoi("+123a43"),atoi("+123a43"));
 	return 0;
 }

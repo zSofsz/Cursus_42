@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sopereir <sopereir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:59:39 by sopereir          #+#    #+#             */
-/*   Updated: 2023/04/14 14:04:25 by sopereir         ###   ########.fr       */
+/*   Updated: 2023/04/17 15:26:20 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int tolower(int c)
+int ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		c += 32;
