@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sopereir <sopereir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 12:33:19 by sopereir          #+#    #+#             */
-/*   Updated: 2023/04/14 12:53:25 by sopereir         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:52:33 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
@@ -29,6 +29,6 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 		j++;
 		i++;
 	}
-	dst[i]='\0';
+	dst[i] = '\0';
 	return (dest_len + ft_strlen(src));
 }

@@ -6,13 +6,13 @@
 /*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:31:14 by sopereir          #+#    #+#             */
-/*   Updated: 2023/04/17 22:57:38 by sofs             ###   ########.fr       */
+/*   Updated: 2023/04/18 15:48:50 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
 
@@ -23,5 +23,5 @@ void *ft_memchr(const void *s, int c, size_t n)
 			return ((void *)s + i);
 		i++;
 	}
-	return NULL ;
+	return (NULL);
 }

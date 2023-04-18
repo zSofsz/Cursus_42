@@ -6,7 +6,7 @@
 /*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 10:42:02 by sopereir          #+#    #+#             */
-/*   Updated: 2023/04/17 13:54:57 by sofs             ###   ########.fr       */
+/*   Updated: 2023/04/18 15:49:50 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	size_t		i;
 	char		str[100];
 	const char	*s;
 	char		*d;

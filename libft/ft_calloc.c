@@ -6,23 +6,23 @@
 /*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:51:41 by sofs              #+#    #+#             */
-/*   Updated: 2023/04/17 15:58:59 by sofs             ###   ########.fr       */
+/*   Updated: 2023/04/18 15:48:00 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	long int	total;
 	void		*s;
-	
+
 	total = nmemb * size;
-	if(nmemb <=0 || size <= 0 || total > 2147483647)
-		return NULL ;
+	if (nmemb <= 0 || size <= 0 || total > 2147483647)
+		return (NULL);
 	s = malloc(nmemb * size);
 	if (s == NULL)
-		return NULL;
-	ft_bzero(s,nmemb * size);
+		return (NULL);
+	ft_bzero(s, nmemb * size);
 	return (s);
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sopereir <sopereir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:00:47 by sopereir          #+#    #+#             */
-/*   Updated: 2023/04/14 17:48:14 by sopereir         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:50:23 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
@@ -20,5 +20,5 @@ char *ft_strchr(const char *s, int c)
 		i++;
 	if (s[i] == (char)c)
 		return ((char *)s + i);
-	return NULL;
+	return (NULL);
 }
