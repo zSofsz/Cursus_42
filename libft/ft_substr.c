@@ -6,7 +6,7 @@
 /*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 11:29:33 by sofs              #+#    #+#             */
-/*   Updated: 2023/04/18 15:55:23 by sofs             ###   ########.fr       */
+/*   Updated: 2023/04/19 20:59:32 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*str;
 
 	str = (char *)malloc(len + 1);
-	if (str == NULL)
+	if (!str || !s)
 		return (NULL);
 	i = 0;
 	while (i < len && s[start + i] != '\0')
