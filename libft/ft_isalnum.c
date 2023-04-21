@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sopereir <sopereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:09:38 by sopereir          #+#    #+#             */
-/*   Updated: 2023/04/17 15:38:32 by sofs             ###   ########.fr       */
+/*   Updated: 2023/04/21 14:34:14 by sopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalnum(int c)
 {
-	if (((char)c >= '0' && (char)c <= '9')
-		|| ((char)c >= 'a' && (char)c <= 'z')
-		|| ((char)c >= 'A' && (char)c <= 'Z'))
+	if ((c >= '0' && c <= '9')
+		|| (c >= 'a' && c <= 'z')
+		|| (c >= 'A' && c <= 'Z'))
 		return (1);
 	return (0);
 }

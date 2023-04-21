@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sopereir <sopereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:34:24 by sopereir          #+#    #+#             */
-/*   Updated: 2023/04/17 22:20:28 by sofs             ###   ########.fr       */
+/*   Updated: 2023/04/21 14:35:17 by sopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if ((unsigned char)c < 127 && (unsigned char)c >= 32)
+	if (c < 127 && c >= 32)
 		return (1);
 	return (0);
 }

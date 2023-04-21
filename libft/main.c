@@ -4,8 +4,8 @@
 
 int main()
 {
-	char haystack[30] = "aaabcabcd";
+	char *str = ft_substr("troupille",100,1);
 
-	printf("%s\n",ft_strnstr(haystack, "cd", 8));
+	printf("%s\n",str);
 	return 0;
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sopereir <sopereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:05:28 by sopereir          #+#    #+#             */
-/*   Updated: 2023/04/17 15:37:22 by sofs             ###   ########.fr       */
+/*   Updated: 2023/04/21 14:35:03 by sopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	if ((char)c >= '0' && (char)c <= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }

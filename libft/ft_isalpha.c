@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sopereir <sopereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 08:39:22 by sopereir          #+#    #+#             */
-/*   Updated: 2023/04/17 15:37:54 by sofs             ###   ########.fr       */
+/*   Updated: 2023/04/21 14:34:30 by sopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	if (((char)c >= 'a' && (char)c <= 'z')
-		|| ((char)c >= 'A' && (char)c <= 'Z'))
+	if ((c >= 'a' && c <= 'z')
+		|| (c >= 'A' && c <= 'Z'))
 		return (1);
 	return (0);
 }
