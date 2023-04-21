@@ -4,7 +4,8 @@
 
 int main()
 {
-	ft_putnbr_fd(-2345,1);
-	//printf("%s\n",ft_strtrim("lorem ipsum dolor sit amet","\t \n"));
+	char haystack[30] = "aaabcabcd";
+
+	printf("%s\n",ft_strnstr(haystack, "cd", 8));
 	return 0;
 }
