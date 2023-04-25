@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sopereir <sopereir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 16:39:48 by sopereir          #+#    #+#             */
-/*   Updated: 2023/04/21 16:42:19 by sopereir         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:19:39 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
-	while (!lst)
+	i = 0;
+	while (lst)
 	{
 		lst = lst->next;
 		i++;

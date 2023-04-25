@@ -6,7 +6,7 @@
 /*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:51:41 by sofs              #+#    #+#             */
-/*   Updated: 2023/04/18 15:48:00 by sofs             ###   ########.fr       */
+/*   Updated: 2023/04/25 17:53:52 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void		*s;
 
 	total = nmemb * size;
-	if (nmemb <= 0 || size <= 0 || total > 2147483647)
+	if (total > 2147483647)
 		return (NULL);
 	s = malloc(nmemb * size);
 	if (s == NULL)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sopereir <sopereir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 16:59:18 by sopereir          #+#    #+#             */
-/*   Updated: 2023/04/21 17:05:52 by sopereir         ###   ########.fr       */
+/*   Updated: 2023/04/25 18:04:52 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *node;
+	t_list	*node;
 
 	if (!lst || !del)
 		return ;
-	while (!(*lst)->next)
+	while (*lst)
 	{
-		node = *lst;
-		ft_lstdelone(node, del);
-		*lst = node->next;
+		node = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = node;
 	}
-	*lst = NULL;
 }

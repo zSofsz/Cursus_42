@@ -6,7 +6,7 @@
 /*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 21:45:31 by sofs              #+#    #+#             */
-/*   Updated: 2023/04/18 23:56:18 by sofs             ###   ########.fr       */
+/*   Updated: 2023/04/25 19:03:40 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ char	**ft_split(char const *s, char c)
 
 	words = count_words(s, c);
 	str = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!str)
+		return (NULL);
 	more_lines(s, c, str, words);
 	return (str);
 }
