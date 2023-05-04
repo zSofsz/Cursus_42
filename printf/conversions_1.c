@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   conversions_1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/28 08:55:57 by sopereir          #+#    #+#             */
-/*   Updated: 2023/05/04 12:21:22 by sofs             ###   ########.fr       */
+/*   Created: 2023/05/04 11:59:17 by sofs              #+#    #+#             */
+/*   Updated: 2023/05/04 14:14:21 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_printf(const char *s, ...)
+void	convert_d(int num, char *s)
 {
-	va_list	args;
-	int		i;
-
-	va_start(args, s);
-	i = 0;
-	while (s[i] != '\0')
+	while (!is_conversion(*s))
 	{
-		if (s[i] == '%')
-		{
-			s++;
-			check_conversion(s, &args);
-		}
-		write (1, &s[i], 1);
-		i++;
+		if (*s == '+')
+			
 	}
-	va_end(args);
 }
