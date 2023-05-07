@@ -1,10 +1,7 @@
 #include "libftprintf.h"
 
-int main(int argc, char** argv)
+int main()
 {
-	(void)argc;
-	//check_flags(&argv[1]);
-	printf("%s\n",argv[1]);
-	printf("%15.16d",0);
+	ft_printf("mekie %d yo", 549034);
 	return 0;
 }
