@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   conversions_1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:59:17 by sofs              #+#    #+#             */
-/*   Updated: 2023/05/04 14:14:21 by sofs             ###   ########.fr       */
+/*   Updated: 2023/05/07 21:12:14 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	convert_d(int num, char *s)
+void	convert_d(int num)
 {
-	while (!is_conversion(*s))
-	{
-		if (*s == '+')
-			
-	}
+	char	*n;
+
+	n = ft_itoa(num);
+	ft_putstr_fd(n, 1);
+	free(n);
 }

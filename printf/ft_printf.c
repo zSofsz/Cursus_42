@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 08:55:57 by sopereir          #+#    #+#             */
-/*   Updated: 2023/05/04 12:21:22 by sofs             ###   ########.fr       */
+/*   Updated: 2023/05/07 21:06:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ int	ft_printf(const char *s, ...)
 	{
 		if (s[i] == '%')
 		{
-			s++;
-			check_conversion(s, &args);
+			i++;
+			check_conversion(s[i], &args);
+			i++;
 		}
 		write (1, &s[i], 1);
 		i++;
