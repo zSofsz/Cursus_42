@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/28 08:55:57 by sopereir          #+#    #+#             */
-/*   Updated: 2023/05/07 21:06:31 by marvin           ###   ########.fr       */
+/*   Created: 2023/04/19 09:49:56 by sopereir          #+#    #+#             */
+/*   Updated: 2023/04/25 15:02:15 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
-int	ft_printf(const char *s, ...)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	va_list	args;
-	int		i;
+	char				*str;
+	unsigned int		i;
 
-	va_start(args, s);
+	str = (char *)malloc(ft_strlen(s) + 1);
+	if (str == NULL)
+		return (NULL);
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == '%')
-		{
-			i++;
-			check_conversion(s[i], &args);
-			i++;
-		}
-		write (1, &s[i], 1);
+		str[i] = f(i, s[i]);
 		i++;
 	}
-	va_end(args);
+	str[i] = '\0';
+	return (str);
 }

@@ -12,23 +12,27 @@
 
 NAME = libftprintf.a
 
-CC = clang
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 DEPS = .
-OBJS = checks.o conversions_1.o ft_printf.o
+OBJS = conversions_1.o conversions_2.o ft_printf.o printf_utils.o
 
 %.o : %.c $(DEPS)
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(DEPS)
 
-$(NAME) : $(OBJS)
-	ar -rc $@ $^
-
 all : $(NAME)
 
+$(NAME) : $(OBJS)
+	make bonus -C libft
+	cp libft/libft.a $(NAME)
+	ar -rc $@ $^
+
 clean :
+	make clean -C libft
 	rm -f $(OBJS)
 
 fclean : clean
+	make fclean -C libft
 	rm -f $(NAME)
 
 re : fclean all

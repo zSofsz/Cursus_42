@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conversions_1.c                                    :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 11:59:17 by sofs              #+#    #+#             */
-/*   Updated: 2023/05/07 21:12:14 by marvin           ###   ########.fr       */
+/*   Created: 2023/04/21 16:42:27 by sopereir          #+#    #+#             */
+/*   Updated: 2023/04/25 16:07:18 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
-void	convert_d(int num)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	*n;
-
-	n = ft_itoa(num);
-	ft_putstr_fd(n, 1);
-	free(n);
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
