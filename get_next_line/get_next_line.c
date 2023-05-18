@@ -6,22 +6,19 @@
 /*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:41:16 by sofs              #+#    #+#             */
-/*   Updated: 2023/05/15 13:51:47 by sofs             ###   ########.fr       */
+/*   Updated: 2023/05/18 23:02:27 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*get_line(char *s, int bytes)
+static char	*get_line(char *s)
 {
 	int		i;
-
-	if (bytes == 0)
-		return (s);
-	i = 1;
-	while (s[i] != '\n')
+	i = 0;
+	while (s[i] != '\n' && s[i] != '\0')
 		i++;
-	return (ft_substr(s, 0, i));
+	return (ft_substr(s, 0, ++i));
 }
 
 char	*get_next_line(int fd)
@@ -31,6 +28,7 @@ char	*get_next_line(int fd)
 	int			bytes;
 
 	aux = (char *)malloc(BUFFER_SIZE + 1);
+	aux[0] = '\0';
 	while (!ft_strchr(aux, '\n'))
 	{
 		bytes = read(fd, aux, BUFFER_SIZE);
@@ -44,7 +42,12 @@ char	*get_next_line(int fd)
 		aux[bytes] = '\0';
 		str = ft_strjoin(str, aux);
 	}
-	aux = get_line(str, bytes);
+	free(aux);
+	if (!str)
+		return (NULL);
+	aux = get_line(str);
 	str = ft_strchr(str, '\n');
 	return (aux);
 }
+//----------------------------------
+//NAO RETORNA NULL NO ULTIMO GNL
