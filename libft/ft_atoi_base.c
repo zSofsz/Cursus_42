@@ -87,6 +87,7 @@ int	ft_atoi_base(char *str, char *base)
 	int	minus;
 	int	total;
 
+	minus = 0;
 	if (!is_base_valid(base))
 		return (0);
 	i = 0;
