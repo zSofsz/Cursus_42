@@ -6,7 +6,7 @@
 /*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:41:16 by sofs              #+#    #+#             */
-/*   Updated: 2023/05/18 23:02:27 by sofs             ###   ########.fr       */
+/*   Updated: 2023/05/30 23:05:05 by sofs             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,37 @@
 static char	*get_line(char *s)
 {
 	int		i;
+	char	*str;
+
 	i = 0;
+	if (!s)
+	{
+		str = (char *)malloc(1);
+		str[0] = '\0';
+		return (str);
+	}
 	while (s[i] != '\n' && s[i] != '\0')
 		i++;
 	return (ft_substr(s, 0, ++i));
 }
 
-char	*get_next_line(int fd)
+static char	*get_remainder(char *s)
 {
-	static char	*str;
-	char		*aux;
+	int		i;
+	char	*str;
+
+	i = 0;
+	while (s[i] != '\n' && s[i] != '\0')
+		i++;
+	str = ft_substr(s, ++i, ft_strlen(s));
+	free(s);
+	return (str);
+}
+
+char	*cycle(int fd, char *str)
+{
 	int			bytes;
+	char		*aux;
 
 	aux = (char *)malloc(BUFFER_SIZE + 1);
 	aux[0] = '\0';
@@ -43,11 +63,22 @@ char	*get_next_line(int fd)
 		str = ft_strjoin(str, aux);
 	}
 	free(aux);
-	if (!str)
-		return (NULL);
+	return (str);
+}
+
+char	*get_next_line(int fd)
+{
+	static char	*str;
+	char		*aux;
+
+	str = cycle(fd, str);
 	aux = get_line(str);
-	str = ft_strchr(str, '\n');
+	if (!aux[0])
+	{
+		free(aux);
+		free(str);
+		return (NULL);
+	}
+	str = get_remainder(str);
 	return (aux);
 }
-//----------------------------------
-//NAO RETORNA NULL NO ULTIMO GNL
