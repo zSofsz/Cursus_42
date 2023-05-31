@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofs <sofs@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sopereir <sopereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:05:52 by sopereir          #+#    #+#             */
-/*   Updated: 2023/05/10 17:36:59 by sofs             ###   ########.fr       */
+/*   Updated: 2023/05/11 12:06:51 by sopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ int	ft_atoi_base(char *str, char *base)
 	int	minus;
 	int	total;
 
+	minus = 0;
 	if (!is_base_valid(base))
 		return (0);
 	i = 0;
